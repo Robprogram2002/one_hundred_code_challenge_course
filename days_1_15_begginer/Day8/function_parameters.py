@@ -76,37 +76,4 @@ def prime_checker(number):
 n = int(input("Check this number: "))
 prime_checker(number=n)
 
-# Ej1: Write a program that converts their scores to grades. By the end of your program, you should have a new
-# dictionary called student_grades that should contain student names for keys and their grades for values.
 
-student_scores = {
-    "Harry": 81,
-    "Ron": 78,
-    "Hermione": 99,
-    "Draco": 74,
-    "Neville": 62,
-}
-
-# This is the scoring criteria:
-#
-# Scores 91 - 100: Grade = "Outstanding"
-# Scores 81 - 90: Grade = "Exceeds Expectations"
-# Scores 71 - 80: Grade = "Acceptable"
-# Scores 70 or lower: Grade = "Fail"
-
-student_grades = {}
-
-for k in student_scores.keys():
-    score = student_scores[k]
-    grade = ""
-    if 90 < score <= 100:
-        grade = "Outsanding"
-    elif 80 < score <= 90:
-        grade = "Exceeds Expectations"
-    elif 70 < score <= 80:
-        grade = "Acceptable"
-    else:
-        grade = "Fail"
-    student_grades[k] = grade
-
-print(student_grades)
