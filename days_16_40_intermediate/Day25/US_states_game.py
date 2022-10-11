@@ -24,10 +24,12 @@ while len(guessed_states) < 50:
 
     if answer_state == "Exit":
         # saves state to learn in a csv file for further study
-        missing_states = []
-        for state in states:
-            if state not in guessed_states:
-                missing_states.append(state)
+
+        missing_states = [state for state in states if state not in guessed_states]
+        # missing_states = []
+        # for state in states:
+        #     if state not in guessed_states:
+        #         missing_states.append(state)
         new_data = pandas.DataFrame(missing_states)
         new_data.to_csv("states_to_learn.csv")
         break
@@ -43,5 +45,3 @@ while len(guessed_states) < 50:
 # improvements :
 # include an automatic save of the already guessed states. So you can run the game again later and complete it
 # Added the missing states to the map in red
-
-
